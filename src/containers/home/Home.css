@@ -1,0 +1,19 @@
+.logo {
+  min-width: 90px; 
+  min-height: 90px; 
+  display: flex; 
+  border: 2px #a0a0a0 solid; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 150px; 
+  margin: 8px;
+  text-decoration: none;
+  z-axis: 8px;
+  font-weight: 600;
+  color: #404040;
+}
+
+.logo:hover {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}

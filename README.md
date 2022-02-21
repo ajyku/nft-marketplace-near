@@ -1,4 +1,4 @@
-# nft-marketplace-near
+# nft-marketplace-near (dApp)
 [OpenSea](https://opensea.io/) clone NFT marketplace for [Aurora EVM](https://aurora.dev/) implemented on the [NEAR Blockchain](https://near.org/)
 
 The project has been built for the [NEAR MetaBUILD Hackathon](https://metabuild.devpost.com/)
@@ -18,7 +18,7 @@ This enables users to list their NFTs on the NEAR platform and get benefits of l
 2. Smart contracts have been built on solidity and compiled with the Hardhat EVM development tool
 3. VS Code, Hardhat and Truffle, and MetaMask, Ethers have been used in the application development
 4. Ethers and @web3-react javascript library used for communication with the MetaMask wallet and the smart contracts deployed at Aurora implemented over the NEAR platform.
-5. Pinata for storing and pinning media and metadata in the IPFS decentralized network.
+5. Pinata for storing and pinning media and metadata in the IPFS decentralized file system.
 6. Metamask for Aurora wallet and cryptocurrency
 
 ### Installation
@@ -48,7 +48,7 @@ exports.nftMarketplaceAddress = "0x2b82bedAaB3C8dCD16b71a5cc7AB119Afa6D7D2C";
 
 It is recommend you to 
 1. FIrst used the addresses (as above) of already deployed smart contracts on the Aurora Testnet for frontend application developemnt and integration with smart contracts perspective. 
-2. Thereafter do the changes and deploy smart contracts then integrate those with your applications
+2. Thereafter do the changes and deploy smart contracts then integrate with your frontend application
 
 ### Configuration
 Create a new ```.env``` file in the root of this project and add as below
@@ -90,9 +90,9 @@ Use Hardhat CLI to deploy contracts
 
   Hardhat takes testnet_aurora parameters from the ```hardhat.config.js``` in the root directory
 
-**Localhost Hardhat EVM environment:**
+**Local Hardhat EVM environment:**
 
-1. Run Hardhat EVM environment in your computer
+1. Run Hardhat EVM development environment in your computer
     ```
     npx hardhat node
     ```
@@ -112,6 +112,7 @@ Refer the Create React App link for more
 
 ### Known bugs
 1. On refresh page other than home cause wallet disconnection issue so contents on the same page doesn't loads but after going to other pages by clicking links then its works fine. [ToDo] This bug needs to fixed
+
 
 
 

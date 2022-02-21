@@ -103,8 +103,11 @@ export default function CreateNFT() {
       showAlert("Required fields unavaiable!", "error")
       return
     }
-
+    
+    showAlert("Uploading File to IPFS", 'info', 1000);
     const added = await pinFileToIPFS(imageFile);
+    showAlert("File Uploaded, uploading metadata", 'success', 1000);
+
     const { IpfsHash } = added.data;
     const finalHash = await pinJSONToIPFS({ ...metaData, image: IpfsHash });
     const txn = await mint(finalHash.data.IpfsHash, metaData.royalty, contractAddress);

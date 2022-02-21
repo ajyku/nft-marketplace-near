@@ -4,7 +4,9 @@
 The project has been built for the [NEAR MetaBUILD Hackathon](https://metabuild.devpost.com/)
 
 Hackathon: https://devpost.com/software/nft-marketplace-o4hf58
+
 Youtube: https://youtu.be/aUYtk8nAbiI
+
 Live Demo: https://nft-marketplace-near-k4fnif3on-ajyku.vercel.app/
 
 
@@ -56,9 +58,9 @@ Create a new ```.env``` file in the root of this project and add as below
 ```
 NODE_ENV=production
 AURORA_PRIVATE_KEY=<Your Aurora Wallet Account Private Key>
-REACT_APP_API_KEY=<Pinata API_KEY>
-REACT_APP_API_SECRET=<Pinata API_SECRET>
-REACT_APP_JWT=<Pinata JWT>
+REACT_APP_API_KEY=<Your Pinata API_KEY>
+REACT_APP_API_SECRET=<Your Pinata API_SECRET>
+REACT_APP_JWT=<Your Pinata JWT>
 ```
 
 ### Hardhat

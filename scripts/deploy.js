@@ -23,7 +23,7 @@ async function main() {
   console.log("CollectionFactory deployed to:", collectionFactory.address);
 
   txHash = collectionFactory.deployTransaction.hash;
-  txReceipt = await ethers.provider.waitForTransaction(txHash);
+  txReceipt = await hre.ethers.provider.waitForTransaction(txHash);
   let nftMarketAddress = txReceipt.contractAddress
 
   console.log("CollectionFactory deployed to:", txHash, txReceipt, nftMarketAddress);
@@ -36,7 +36,7 @@ async function main() {
   console.log("MarketPlace deployed to:", marketPlace.address);
 
   txHash = marketPlace.deployTransaction.hash;
-  txReceipt = await ethers.provider.waitForTransaction(txHash);
+  txReceipt = await hre.ethers.provider.waitForTransaction(txHash);
   let marketPlaceAddress = txReceipt.contractAddress
 
   console.log("marketPlace deployed to:", txHash, txReceipt, marketPlaceAddress);

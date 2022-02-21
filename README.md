@@ -50,16 +50,6 @@ It is recommend you to
 1. FIrst used the addresses (as above) of already deployed smart contracts on the Aurora Testnet for frontend application developemnt and integration with smart contracts perspective. 
 2. Thereafter do the changes and deploy smart contracts then integrate with your frontend application
 
-### Configuration
-Create a new ```.env``` file in the root of this project and add as below
-
-```
-NODE_ENV=production
-AURORA_PRIVATE_KEY=<Your Aurora Wallet Account Private Key>
-REACT_APP_API_KEY=<Your Pinata API_KEY>
-REACT_APP_API_SECRET=<Your Pinata API_SECRET>
-REACT_APP_JWT=<Your Pinata JWT>
-```
 
 ### Hardhat
 Hardhat is a very popular EVM (Ethereum Virtual Machine) development environment. 

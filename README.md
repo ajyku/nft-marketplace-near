@@ -113,26 +113,6 @@ Refer the Create React App link for more
 ### Known bugs
 1. On refresh page other than home cause wallet disconnection issue so contents on the same page doesn't loads but after going to other pages by clicking links then its works fine. [ToDo] This bug needs to fixed
 
-## Important resources for a Web3 Developer
-
-[web3.js](https://web3js.readthedocs.io/en/v1.7.0/)
-[ethers.js](https://docs.ethers.io/v5/)
-[Solidity](https://docs.soliditylang.org/en/v0.8.12/)
-[MetaMask Wallet](https://metamask.io/)
-
-Dev Environment:
-[HardHat](https://hardhat.org/getting-started/)
-[Truffle](https://trufflesuite.com/)
-
-Blockchain Platforms:
-[Ethereum](https://ethereum.org/en/)
-[NEAR](https://near.org/)
-[Auroa](https://aurora.dev/)
-
-Decentralized storage
-[IPFS](https://ipfs.io/)
-[Pinata](https://www.pinata.cloud/)
-[Infura](https://infura.io/)
 
 
 

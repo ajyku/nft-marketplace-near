@@ -3,11 +3,9 @@
 
 The project has been built for the [NEAR MetaBUILD Hackathon](https://metabuild.devpost.com/)
 
-Hackathon: https://devpost.com/software/nft-marketplace-o4hf58
-
-Youtube: https://youtu.be/aUYtk8nAbiI
-
-Live Demo: https://nft-marketplace-near-k4fnif3on-ajyku.vercel.app/
+1. Hackathon: https://devpost.com/software/nft-marketplace-o4hf58
+2. Youtube: https://youtu.be/aUYtk8nAbiI
+3. Live Demo: https://nft-marketplace-near-k4fnif3on-ajyku.vercel.app/
 
 
 ### What is this

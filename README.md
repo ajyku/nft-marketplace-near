@@ -100,7 +100,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Refer the Create React App link for more
 
-
 ### Known bugs
 1. On refresh page other than home cause wallet disconnection issue so contents on the same page doesn't loads but after going to other pages by clicking links then its works fine. [ToDo] This bug needs to fixed
 

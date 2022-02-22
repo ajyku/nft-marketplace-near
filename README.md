@@ -36,6 +36,7 @@ This enables users to list their NFTs on the NEAR platform and get benefits of l
     REACT_APP_JWT=<Pinata JWT>
     ``` 
 
+    [Pinata NFT media management](https://www.pinata.cloud/)
 
 ### Smart Contract Addresses [Aurora Testnet]
 Change the address (in the ```src/config/contractAddress.js```) if you deploy the factoryContract and marketPlace freshly using the Hardhat CLI

@@ -7,7 +7,7 @@ module.exports = {
       symbol: 'ETH',
       decimals: 18,
     },
-    // rpcUrls: chainInformation.urls,
+    rpcUrls:  ['https://testnet.aurora.dev/'],
     blockExplorerUrls: ['https://testnet.aurora.dev/'],
   },
   aurora_mainnet: {
@@ -18,7 +18,7 @@ module.exports = {
       symbol: 'ETH',
       decimals: 18,
     },
-    // rpcUrls: chainInformation.urls,
+    rpcUrls:  ['https://aurora.dev/'],
     blockExplorerUrls: ['https://aurora.dev/'],
   }
 }

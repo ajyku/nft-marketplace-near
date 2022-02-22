@@ -102,6 +102,7 @@ Refer the Create React App link for more
 
 ### Known bugs
 1. On refresh page other than home cause wallet disconnection issue so contents on the same page doesn't loads but after going to other pages by clicking links then its works fine. [ToDo] This bug needs to fixed
+2. Currently NFT creation in the [live demo](https://nft-marketplace-near-k4fnif3on-ajyku.vercel.app/) at vercel is not working due to some issue in access of environment variable there. I am working on that
 
 
 

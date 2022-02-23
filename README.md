@@ -13,7 +13,7 @@ The NFT Marketplace as a decentralized Web3 application built over a javascript 
 
 This enables users to list their NFTs on the NEAR platform and get benefits of lower gas charges and the benefit of a non-EVM blockchain protocol and platform. Here NFTs trading like directly sells, auction, lists, unlisting, etc. are feasible.
 
-***Currently its configured to connect Aurora TestNet.*** so connect this website with your Aurora TestNet network in your MetaMask Wallet and ensure you have sufficent balance.
+  ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) ***Currently its configured to connect Aurora TestNet.*** so connect this website with your Aurora TestNet network in your MetaMask Wallet and ensure you have sufficent balance.
 
 ### How this is build
 1. Frontend application has built on the react.js (javascript) and @mui material design UI library

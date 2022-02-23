@@ -5,8 +5,7 @@ The project has been built for the [NEAR MetaBUILD Hackathon](https://metabuild.
 
 1. Hackathon: https://devpost.com/software/nft-marketplace-o4hf58
 2. Youtube: https://youtu.be/aUYtk8nAbiI
-3. Live Demo: https://nft-marketplace-near-k4fnif3on-ajyku.vercel.app/
-
+3. Live Demo: https://nft-marketplace-near.vercel.app/
 
 ### What is this
 The NFT Marketplace as a decentralized Web3 application built over a javascript software stack using EVM-based backend software, tools, and specification but for a non-EVM protocol platform i.e. NEAR using Aurora EVM and its currency.

@@ -79,9 +79,6 @@ export default function Home() {
             >
             Create
             </CustomButton>
-            <div style={{marginTop: 48, fontStyle: "italic", color: "red"}}>
-              Connect this site with Aurora TestNet Network in the MetaMask
-            </div>
           </div>
           <div style={{width: "50%", paddingLeft: 48}}>
             <img 

@@ -43,9 +43,12 @@ export default function MyCollections() {
         </div>
         <div >
           {!userCollections ? 
-            <CircularProgress sx={{padding: 8}}/>
+            <CircularProgress style={{margin: 16}}/>
             :
-            <ListOfUserCollections />
+            userCollections.length > 0 ?
+              <ListOfUserCollections />
+            :
+              <div style={{padding: "16px 24px", color: "red"}}>No NFT. Create a new collection</div>
           }
         </div>
       </Grid>

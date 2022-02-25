@@ -13,7 +13,7 @@ export default function CollectionDetail() {
   const { metaDataHash, contractAddress, ownerAddress } = useParams();
   const [currentMetaData, setCurrentMetaData] = useState({});
   const [totalNFTs, setTotalNFTs] = useState(-1);
-  const [NFTDetails, setNFTDetails] = useState(undefined)
+  const [NFTDetails, setNFTDetails] = useState()
   const [isApproved, setIsApproved] = useState(false);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function CollectionDetail() {
       <Grid container xs={12} md={10} sx={{justifyContent: "center", paddingTop: 2}}>
         <CollectionBanner totalNFTs={totalNFTs} metaData={currentMetaData} isApproved={isApproved} setIsApproved={setIsApproved} isOwner={accounts && (ownerAddress == accounts[0]) }/>
         <div style={{height: 1, width: "100%", background: "#f0f0f0", margin: "32px 0px"}}/>
-        <NFTContainer isApproved={isApproved} metaDataHash={metaDataHash} nFTDetails={NFTDetails} ownerAddress={ownerAddress} accounts={accounts} />
+        <NFTContainer isApproved={isApproved} metaDataHash={metaDataHash} nFTDetails={NFTDetails} ownerAddress={ownerAddress} accounts={accounts} totalNFTs={totalNFTs}/>
       </Grid>
     </Grid>
   )

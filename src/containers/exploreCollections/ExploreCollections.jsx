@@ -50,28 +50,43 @@ export default function Explore() {
         <div style={{height: "1px", width: "100%", background: "#f0f0f0"}}/>
         <Grid container sx={{marginTop: 4}}>
             {/*All Listed Items for sale*/}
-            {tabValue == 0 && (!allCollections ? <CircularProgress /> :
-              <Grid container >
-                {allCollections.map((data) => {
-                    return (<SaleNFTCard key={uuidv4()} {...(data.collection)} auction={data.auction} accounts={accounts}/>);
-                })}
-              </Grid>
+            {tabValue == 0 && (!allCollections ? 
+              <CircularProgress style={{margin: 16}}/> 
+              :
+              allCollections.length > 0 ?
+                <Grid container >
+                  {allCollections.map((data) => {
+                      return (<SaleNFTCard key={uuidv4()} {...(data.collection)} auction={data.auction} accounts={accounts}/>);
+                  })}
+                </Grid>
+              :
+                <div style={{padding: 16, color: "red"}}>No NFT</div>
             )}
             {/*My Listed Items for sale*/}
-            {tabValue == 1 && (!myItemsListed ? <CircularProgress /> :
-              <Grid container >
-                {myItemsListed.map((collection) => {
-                    return (<ListedNFTCard key={uuidv4()} {...collection} accounts={accounts}/>);
-                })}
-              </Grid>
+            {tabValue == 1 && (!myItemsListed ? 
+              <CircularProgress style={{margin: 16}}/> 
+              :
+              myItemsListed.length > 0 ?
+                <Grid container >
+                  {myItemsListed.map((collection) => {
+                      return (<ListedNFTCard key={uuidv4()} {...collection} accounts={accounts}/>);
+                  })}
+                </Grid>
+              :
+                <div style={{padding: 16, color: "red"}}>No NFT</div>
             )}
             {/*My purchased NFTs*/}
-            {tabValue == 2 && (!myOwnedItems ? <CircularProgress /> :
-              <Grid container >
-                  {myOwnedItems.map((collection) => {
-                      return (<SaleNFTCard key={uuidv4()} {...collection} accounts={accounts}/>);
-                  })}
-              </Grid>
+            {tabValue == 2 && (!myOwnedItems ? 
+              <CircularProgress style={{margin: 16}}/> 
+              :
+              myOwnedItems.length > 0 ?
+                <Grid container >
+                    {myOwnedItems.map((collection) => {
+                        return (<SaleNFTCard key={uuidv4()} {...collection} accounts={accounts}/>);
+                    })}
+                </Grid>
+              :
+                <div style={{padding: 16, color: "red"}}>No NFT</div>
             )}
         </Grid>
       </Grid>

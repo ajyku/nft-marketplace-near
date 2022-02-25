@@ -16,31 +16,38 @@ import { getJSONfromHash, pinFileToIPFS, pinJSONToIPFS, unPin } from '../../conf
 
 export default function CreateNFT() {
   const {getUserCollections, mint, showAlert} = useContext(Web3Context)
-  const { metaDataHash } = useParams();
+  const { metaDataHash, name, hash } = useParams();
   const navigate = useNavigate()
   const [userCollections, setUserCollections] = useState(undefined);
   const [metaData, setMetaData] = useState({})
   const [imageFile, setImageFile] = useState(null);
-  const [currentMetaData, setCurrentMetaData] = useState({});
+  // const [currentMetaData, setCurrentMetaData] = useState({});
   const [menuData, setMenuData] = useState([])
   const [contractAddress, setContractAddress] = useState(null)
 
   useEffect(() => {
     getUserCollections().then(data => {
+      // console.log("data", data)
       setUserCollections(data)
       actionMenuItems(data)
     });
   }, [])
 
-  useEffect(() => {
-    const fetchMetaData = async () => {
-      if (metaDataHash) {
-        const response = await getJSONfromHash(metaDataHash)
-        setCurrentMetaData(response.data);
-      }
-    }
-    fetchMetaData();
-  }, [metaDataHash]);
+  // useEffect(()=>{
+  //   console.log("menuData", menuData)
+  // },[menuData])
+
+  // console.log("metaDataHash", metaDataHash, name, hash)
+  
+  // useEffect(() => {
+  //   const fetchMetaData = async () => {
+  //     if (metaDataHash) {
+  //       const response = await getJSONfromHash(metaDataHash)
+  //       setCurrentMetaData(response.data);
+  //     }
+  //   }
+  //   fetchMetaData();
+  // }, [metaDataHash]);
 
   const selectCollection = (event) => {
     setContractAddress(event.target.value);
@@ -55,12 +62,13 @@ export default function CreateNFT() {
   //     return null
   //   }
 
-  async function actionMenuItems(list) {
+  function actionMenuItems(list) {
     if(!list) return
     list.map(async (collection) => {
       getJSONfromHash(collection.metaDataHash)
         .then(resp=>{
-          setMenuData([...menuData, [collection.contractAddress, resp.data.name ]])
+          // console.log("getJSONfromHash", resp, menuData)
+          setMenuData((prevState)=>[...prevState, [collection.contractAddress, resp.data.name ]])
         })
     })
   }
@@ -103,7 +111,7 @@ export default function CreateNFT() {
       showAlert("Required fields unavaiable!", "error")
       return
     }
-    
+
     showAlert("Uploading File to IPFS", 'info', 1000);
     const added = await pinFileToIPFS(imageFile);
     showAlert("File Uploaded, uploading metadata", 'success', 1000);
@@ -192,6 +200,14 @@ export default function CreateNFT() {
             onChange={handleChange}
             rows={3}
           />
+          <TextField
+            fullWidth
+            id="url"
+            label="URL"
+            variant="outlined"
+            sx={{marginTop: 4}}
+            onChange={handleChange}
+          />
           <FormControl fullWidth sx={{marginTop: 4}}>
             <InputLabel id="collection">Collection*</InputLabel>
             <Select
@@ -206,6 +222,15 @@ export default function CreateNFT() {
               })}
             </Select>
           </FormControl>
+          {/* <TextField
+            disabled
+            fullWidth
+            id="collection"
+            label="Collection"
+            variant="outlined"
+            sx={{marginTop: 4}}
+            value={name}
+          /> */}
           <TextField
             fullWidth
             id="royalty"

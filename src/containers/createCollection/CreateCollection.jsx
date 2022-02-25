@@ -158,6 +158,15 @@ export default function CreateCollection() {
             sx={{marginTop: 4}}
             onChange={handleChange}
           />  
+          <TextField
+            fullWidth
+            id="url"
+            label="URL"
+            variant="outlined"
+            size="large"
+            sx={{marginTop: 4}}
+            onChange={handleChange}
+          />
         </Grid>
         <div style={{marginTop: 32}}>
           <CustomButton

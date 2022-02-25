@@ -86,7 +86,9 @@ export default function NFT() {
         <Grid container xs={12} md={6} sx={{padding: 1, marginLeft: 3, flexDirection: "column"}}>
           <h1 style={{fontSize: 32, fontWeight: 600, marginBottom: 24}}>{nFTData && nFTData.name}</h1>
           <div style={{fontSize: 12, marginBottom: 24}}>Owned by <span style={{padding: "2px 8px", background: "#e3f2fd", color:"#1976d2", marginLeft: 4, borderRadius: 12}}>{accounts && accounts[0] == ownerAddress ? "You" : displayHash(ownerAddress)}</span></div>
-          <div style={{marginBottom: 56}}>{nFTData && nFTData.description}</div>
+          <div style={{marginBottom: 16}}>{nFTData && nFTData.description}</div>
+          {nFTData?.url && <a target="_blank" href={nFTData?.url}>{nFTData?.url}</a>}
+          <div style={{marginBottom: 56}}/>
           <Stack direction="row" spacing={2} style={{marginBottom: 48}}>
             {nFTData && nFTData.attribute1 && <Chip label={nFTData && nFTData.attribute1} />}
             {nFTData && nFTData.attribute2 && <Chip label={nFTData && nFTData.attribute2} />}

@@ -76,7 +76,7 @@ export default function BuyNFT() {
       navigate('/')
     }
   }
-  
+
   return (
     <Grid container sx={{display: "flex", flexDirection:"column", alignItems: "center", padding: 2, marginTop: 6}}>
       <Grid  sx={{width: "70%", display: "flex", flexDirection:"row", justifyContent: "flex-start", paddingTop: 2}}>
@@ -96,8 +96,9 @@ export default function BuyNFT() {
             :
             <div style={{fontSize: 12, marginBottom: 24}}>Seller <span style={{padding: "2px 8px", background: "#e3f2fd", color:"#1976d2", marginLeft: 4, borderRadius: 12}}>{accounts[0] == seller ? "You" : displayHash(seller)}</span></div>
           }
-          
-          <div style={{marginBottom: 56}}>{metaData && metaData.description}</div>
+          <div style={{marginBottom: 16}}>{metaData && metaData.description}</div>
+          {metaData.url && <a target="_blank" href={metaData.url}>{metaData.url}</a>}
+          <div style={{marginBottom: 56}}/>
           <Stack direction="row" spacing={2} style={{marginBottom: 48}}>
             {metaData && metaData.attribute1 && <Chip label={metaData && metaData.attribute1} />}
             {metaData && metaData.attribute2 && <Chip label={metaData && metaData.attribute2} />}

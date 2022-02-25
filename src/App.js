@@ -49,7 +49,7 @@ function App() {
         <Route path="/userCollections" element={<UserCollections />} />
         <Route path="/myCollections" element={<MyCollections />} />
         <Route path="/CollectionDetails/:contractAddress/:metaDataHash/:ownerAddress" element={<CollectionDetails />} />
-        <Route path="/createNFT" element={<CreateNFT />} />
+        <Route path="/createNFT/:name/:hash" element={<CreateNFT />} />
         <Route path="/explore" element={<ExploreCollections />} />
         <Route path="/nft/:contractAddress/:tokenURI/:ownerAddress/:approved/:tokenId" element={<NFT />} />
         <Route path="/buyNFT" element={<BuyNFT />} />

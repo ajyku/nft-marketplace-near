@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link} from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import CustomButton from '../../components/CustomButton';
@@ -7,13 +7,15 @@ import {v4 as uuidv4} from "uuid"
 import { ContactlessOutlined } from '@mui/icons-material';
 import CircularProgress from '@mui/material/CircularProgress';
 
-export default function NFTContainers({metaDataHash, nFTDetails, ownerAddress, accounts, isApproved, totalNFTs}) {
+export default function NFTContainers({contractAddress, metaDataHash, metaData, nFTDetails, ownerAddress, accounts, isApproved, totalNFTs}) {
   const isOwner = accounts && ownerAddress == accounts[0]
+
+  // console.log("nFTDetails", nFTDetails, metaDataHash, metaData)
 
   return (
     <Grid container sx={{display:"flex", flexDirection:"column", justifyContent: "center", marginTop: 0}}>
       {isOwner && <div style={{marginLeft: 16, marginBottom: 16}}>
-        <CustomButton variant="contained" component={Link} to={`/createNFT`}>New NFT</CustomButton>
+        <CustomButton variant="contained" component={Link} to={`/createNFT/${metaData.name}/${contractAddress}`} >New NFT</CustomButton>
       </div>}
       {nFTDetails != undefined && totalNFTs != -1 ? 
         (nFTDetails.length > 0 ?

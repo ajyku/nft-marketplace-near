@@ -36,18 +36,19 @@ export default function SaleNFTCard(props) {
   });
 
   useEffect(() => {
-    const fetchMetaData = async () => {
-      const nftData = {
-          ...props
-      }
-      nftData["tokenURI"] = await tokenURI(tokenId, nftContract);
-      nftData["metaData"] = (await getJSONfromHash(nftData.tokenURI)).data;
-      setNftData(nftData);
-      setCurrentMetaData(nftData.metaData);
-      calculateTimeLeft(auction?.timeEnding.toString());
-    }
     fetchMetaData();
   }, [tokenId]);
+
+  const fetchMetaData = async () => {
+    const nftData = {
+        ...props
+    }
+    nftData["tokenURI"] = await tokenURI(tokenId, nftContract);
+    nftData["metaData"] = (await getJSONfromHash(nftData.tokenURI)).data;
+    setNftData(nftData);
+    setCurrentMetaData(nftData.metaData);
+    calculateTimeLeft(auction?.timeEnding.toString());
+  }
 
   const calculateTimeLeft = (endTime) => {
     let currDate = Date.now();
@@ -60,8 +61,10 @@ export default function SaleNFTCard(props) {
     navigate(`/buyNFT`)
   }
 
-  const handlePlace = async () => {
+  const handleBid = async () => {
     await createAuctionBid(itemId, bid);
+    // reload [Not changes bid vale in the card. [ToDo] Need to correct]
+    fetchMetaData();
   }
 
   const getLeftPeriod = () => {
@@ -129,7 +132,7 @@ export default function SaleNFTCard(props) {
             <div style={{flex:1, display: "flex"}}>
               <TextField size="small" label="Bid value" onChange={(e) => setBid(e.target.value)} style={{width: "100%", paddingRight: 16, fontSize: 14}}>{bid}</TextField>
             </div>
-            <CustomButton variant="contained" onClick={handlePlace} size="small" sx={{padding: "4px 12px"}}>Place Bid</CustomButton>
+            <CustomButton variant="contained" onClick={handleBid} size="small" sx={{padding: "4px 12px"}}>Place Bid</CustomButton>
           </>
           :
           <div style={{width:"100%", display:"inline-flex", justifyContent: "space-between", alignItems: "center"}}>
